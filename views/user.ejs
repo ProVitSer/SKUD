@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%- include("partials/head.ejs") %>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <%- include("partials/navbar.ejs") %>
+            <div class="container-fluid page-body-wrapper">
+                <%- include("partials/sidebar.ejs") %>
+                    <!-- partial -->
+                    <div class="main-panel">
+                        <div class="content-wrapper">
+                            <div class="row">
+
+
+
+                                <div class="col-12 grid-margin">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Выберите шаблон</h4>
+                                            <form class="forms-sample">
+                                                <div class="form-group">
+                                                    <!-- <select id="select" class="form-control form-control-lg" onchange="change()"> -->
+                                                    <select id="selectUserTemplate" class="form-control form-control-lg">
+                                                    <option value="" disabled selected hidden>Выберите</option>
+                                                    <option value="1">Шаблон по часам</option>
+                                                    <option value="2">Шаблон по отработанному времени</option>
+                                                    </select>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="col-12 grid-margin" style="display: none;" id="hour">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Шаблон по часам</h4>
+                                            <form class="forms-sample" id="formHour" name="contact-form-hour">
+                                                <div id="usersHour">
+
+                                                </div>
+
+                                                <br>
+                                                <label for="exampleFormControlSelect1">Время начала работы</label>
+
+                                                <div class="row">
+
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <label for="time">С</label>
+                                                            <input type="time" class="form-control" required id="withStartWorkTime">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+
+                                                        <div class="form-group">
+                                                            <label for="time">До</label>
+                                                            <input type="time" class="form-control" required id="beforeStartWorkTime">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <br>
+
+                                                <label for="exampleFormControlSelect1 ">Время окончания работы</label>
+                                                <div class="row ">
+
+                                                    <div class="col-sm-4 ">
+                                                        <div class="form-group ">
+                                                            <label for="time">С</label>
+                                                            <input type="time" class="form-control" required id="withEndWorkTime">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 ">
+
+                                                        <div class="form-group">
+                                                            <label for="time">До</label>
+                                                            <input type="time" class="form-control" required id="beforeEndWorkTime">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Mon">Пн</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Tue">Вт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Wed">Ср</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Thu">Чт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Fri">Пт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Sat">Сб</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="Sun">Вс</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Общие праздники</label>
+                                                    <input type="holiday" class="form-control" id="inputHoliday" required placeholder="01.01-01.10,02.23">
+                                                </div>
+
+
+                                                <!-- <p class="card-description"> Закрывать рабочий день после задержки на Х часов </p> -->
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1">Закрывать рабочий день после задержки на Х часов</label>
+                                                    <select class="form-control form-control-lg" id="selectCloseWorkDayBeforeTime">
+                                                    <option value="0">0</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <p class="card-description"> Перерыв в часах </p>
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="time">C</label>
+                                                            <input type="time" class="form-control" id="startBreakTime" required placeholder="Время начала работы">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+
+                                                        <div class="form-group">
+                                                            <label for="time">До</label>
+                                                            <input type="time" class="form-control" id="endBreakTime" required placeholder="Время окончания работы">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <button type="submit" class="btn btn-success mr-2">Сохранить</button>
+                                                <button class="btn btn-light">Отменить</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-12 grid-margin" style="display: none;" id="time">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Шаблон по отработанному времени</h4>
+                                            <form class="forms-sample" id="formTime" name="contact-form-time">
+                                                <div id="usersTime">
+
+                                                </div>
+
+                                                <p class="card-description">Отработанных часов</p>
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group">
+                                                            <input type="time" class="form-control" id="hoursWorked">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="row">
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="MonTime">Пн</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="TueTime">Вт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="WedTime">Ср</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="ThuTime">Чт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="FriTime">Пт</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="SatTime">Сб</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-1">
+                                                        <div class="form-group">
+                                                            <div class="form-check form-check-flat">
+                                                                <label class="form-check-label">
+                                                          <input type="checkbox" class="form-check-input" id="SunTime">Вс</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="exampleInputEmail1">Общие праздники</label>
+                                                    <input type="holiday" class="form-control" id="inputHolidayTime" placeholder="01.01-10.01,23.02">
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="exampleFormControlSelect1">Закрывать рабочий день после задержки на Х часов</label>
+                                                    <select class="form-control form-control-lg" id="selectCloseWorkDayBefore">
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    </select>
+                                                </div>
+
+
+                                                <p class="card-description"> Перерыв в часах </p>
+
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <div class="form-group">
+                                                            <label for="time">C</label>
+                                                            <input type="time" class="form-control" id="startBreak">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-6">
+
+                                                        <div class="form-group">
+                                                            <label for="time">До</label>
+                                                            <input type="time" class="form-control" id="endBreak">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-success mr-2">Сохранить</button>
+                                                <button class="btn btn-light">Отменить</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            </div>
+                        </div>
+                        <!-- content-wrapper ends -->
+                        <footer class="footer">
+                            <%- include("partials/footer.ejs") %>
+                        </footer>
+                        <!-- partial -->
+                    </div>
+                    <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+    </div>
+    <%- include("partials/script.ejs") %>
+        <script src="js/user.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%- include("partials/head.ejs") %>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <%- include("partials/navbar.ejs") %>
+            <div class="container-fluid page-body-wrapper">
+                <%- include("partials/sidebar.ejs") %>
+                    <!-- partial -->
+                    <div class="main-panel">
+                        <div class="content-wrapper">
+                            <div class="row">
+
+
+                                <div class="col-12 grid-margin">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Добавление Офис</h4>
+                                            <form class="forms-sample" id="office">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">IP/порт</label>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" required placeholder="192.168.88.107:8090" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">SN устройства</label>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" required placeholder="84E0F4251DA31501" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">Пароль</label>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" required placeholder="password" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group row">
+                                                            <label class="col-sm-3 col-form-label">Название офиса</label>
+                                                            <div class="col-sm-9">
+                                                                <input class="form-control" required placeholder="Офис на Лубянке" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <button type="submit" class="btn btn-success mr-2">Сохранить</button>
+                                                <button class="btn btn-light">Отменить</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <!-- content-wrapper ends -->
+                        <footer class="footer">
+                            <%- include("partials/footer.ejs") %>
+                        </footer>
+                        <!-- partial -->
+                    </div>
+                    <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+    </div>
+    <%- include("partials/script.ejs") %>
+        <script src="js/office.js"></script>
+</body>
+
+</html>

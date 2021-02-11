@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%- include("partials/head.ejs") %>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <%- include("partials/navbar.ejs") %>
+            <div class="container-fluid page-body-wrapper">
+                <%- include("partials/sidebar.ejs") %>
+                    <!-- partial -->
+                    <div class="main-panel">
+                        <div class="content-wrapper">
+                            <div class="row">
+
+
+                                <div class="col-12 grid-margin">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title">Отчет</h4>
+                                            <form class="forms-sample" id="formReport" name="contact-form-report">
+                                                <div class="row">
+
+                                                    <div class="col-sm-4">
+                                                        <div id="usersReport">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group" style="text-align: center">
+                                                            <label for="time">С</label>
+                                                            <input type="date" class="form-control" required id="reportWithTime">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="form-group" style="text-align: center">
+                                                            <label for="time">До</label>
+                                                            <input type="date" class="form-control" required id="reportBeforeTime">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-success mr-2">Создать</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-lg-12 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title" id="h4Text">Отчет по сотруднику</h4>
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th> Дата </th>
+                                                        <th> Время прихода </th>
+                                                        <th> Время ухода </th>
+                                                        <th> Статус </th>
+                                                    </tr>
+                                                </thead>
+                                                <div></div>
+                                                <tbody id="userFinalyReport">
+                                                    <!-- <tr>
+                                                        <td> 30-11-2020 </td>
+                                                        <td> 7:30 </td>
+                                                        <td> 9:30 </td>
+                                                        <td style="background-color: #e80707"> Опаздал на работу</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> </td>
+                                                        <td> 10:45 </td>
+                                                        <td> 14:30 </td>
+                                                        <td> </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> </td>
+                                                        <td> 15:30 </td>
+                                                        <td> 18:30 </td>
+                                                        <td style="background-color: #18a809"> Ушел вовремя</td>
+                                                    </tr>-->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                        <!-- content-wrapper ends -->
+                        <footer class="footer">
+                            <%- include("partials/footer.ejs") %>
+                        </footer>
+                        <!-- partial -->
+                    </div>
+                    <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+    </div>
+    <%- include("partials/script.ejs") %>
+        <script src="js/report.js"></script>
+
+</body>
+
+</html>

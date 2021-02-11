@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <%- include("partials/head.ejs") %>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <%- include("partials/navbar.ejs") %>
+            <div class="container-fluid page-body-wrapper">
+                <%- include("partials/sidebar.ejs") %>
+                    <!-- partial -->
+                    <div class="main-panel">
+                        <div class="content-wrapper">
+                            <div class="row">
+                                <div class="col-lg-12 grid-margin stretch-card">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h4 class="card-title" style="font-size: 24px;">Панель статусов работников</h4>
+                                            <table class="table table-striped" style="text-align: center">
+                                                <thead>
+                                                    <tr>
+                                                        <th> Пользователь </th>
+                                                        <th> ФИО </th>
+                                                        <th> Статус </th>
+                                                        <th> Офис </th>
+                                                        <th> Шаблон </th>
+                                                        <th> Дата последнего прохода </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="userTable">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- content-wrapper ends -->
+                        <footer class="footer">
+                            <%- include("partials/footer.ejs") %>
+                        </footer>
+                        <!-- partial -->
+                    </div>
+                    <!-- main-panel ends -->
+            </div>
+            <!-- page-body-wrapper ends -->
+    </div>
+    <%- include("partials/script.ejs") %>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
